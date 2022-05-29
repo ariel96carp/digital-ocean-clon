@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalOcean Clon</title>
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" class="light">
+        <header id="page-header" class="fixed w-full top-0 left-0 bg-white z-50 dark:bg-gray-900">
+            <div class="bg-do-blue-dark hidden md:block">
+                <div class="page-container mx-auto py-2 text-gray-300 flex justify-center lg:justify-between items-center text-sm">
+                    <div class="text-center">
+                        Power up with new SaaS Add-Ons from the DigitalOcean Marketplace →
+                    </div>
+                    <div class="hidden lg:block">
+                        <a href="#" class="py-1 px-2 bg-do-blue-mediumdark rounded text-sky-500">We're Hiring</a>
+                        <a href="#" class="py-1 px-2 hover:text-white">Blog</a>
+                        <a href="#" class="py-1 px-2 hover:text-white">Docs</a>
+                        <a href="#" class="py-1 px-2 hover:text-white">Get Support</a>
+                        <a href="#" class="py-1 px-2 hover:text-white">Sales</a>
+                    </div>
+                </div>
+            </div>
+            <nav class="text-gray-500 shadow-md dark:text-gray-300">
+                <div class="page-container mx-auto flex items-center justify-between md:justify-start gap-6 py-5">
+                    <a href="#" id="main-logo">
+                        <img src="/img/logo.87a8f3b8.svg" alt="Logo de DigitalOcean">
+                    </a>
+                    <ul class="hidden lg:flex font-medium" id="menu">
+                        <li class="item">
+                            <a href="#" class="py-1 px-2 item-image">Products</a>
+                            <div class="submenu gradient text-black overflow-scroll pt-12">
+                                <div class="w-[90%] mx-auto grid grid-cols-[25%,75%]">
+                                    <div class="pr-5">
+                                        <h2 class="font-semibold tracking-wider mb-6">FEATURED PRODUCTS</h2>
+                                        <ul>
+                                            <submenu-item-v2>
+                                                <template slot="title">Droplets</template>
+                                                <template slot="body">Scalable virtual machines</template>
+                                            </submenu-item-v2>
+                                            <submenu-item-v2>
+                                                <template slot="title">Kubernetes</template>
+                                                <template slot="body">Managed Kubernetes clusters</template>
+                                            </submenu-item-v2>
+                                            <submenu-item-v2>
+                                                <template slot="title">App Platform</template>
+                                                <template slot="body">Get Apps to market faster</template>
+                                            </submenu-item-v2>
+                                            <submenu-item-v2>
+                                                <template slot="title">Functions</template>
+                                                <template slot="body">Servesless compute solution</template>
+                                            </submenu-item-v2>
+                                            <submenu-item-v2>
+                                                <template slot="title">Databases</template>
+                                                <template slot="body">Worry free setup & maintenance</template>
+                                            </submenu-item-v2>
+                                        </ul>
+                                    </div>
+                                    <ul class="pl-5 grid grid-cols-[repeat(3,1fr)] gap-x-3">
+                                        <submenu-item-card>
+                                            <template slot="title">COMPUTE</template>
+                                            <template slot="list">
+                                                <li class="py-1.5">
+                                                    <a href="#">Droplets</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Kubernetes</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">App Platform</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a 
+                                                        href="#"
+                                                        class="flex items-center gap-2 after:content-['Newly_added'] after:bg-sky-600 after:py-1 after:px-2 after:rounded-xl after:text-[60%] after:text-white after:font-cascadia"
+                                                    >Functions</a>
+                                                </li>
+                                            </template>
+                                        </submenu-item-card>
+                                        <submenu-item-card>
+                                            <template slot="title">MANAGED DATABASES</template>
+                                            <template slot="list">
+                                                <li class="py-1.5">
+                                                    <a href="#">MongoDB</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">PostgreSQL</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">MySQL</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Redis <sup class="text-[55%]">TM</sup></a>
+                                                </li>
+                                            </template>
+                                        </submenu-item-card>
+                                        <submenu-item-card>
+                                            <template slot="title">DEVELOPER TOOLS</template>
+                                            <template slot="list">
+                                                <li class="py-1.5">
+                                                    <a href="#">API</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">CLI</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Monitoring</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Teams</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Deploy to DigitalOcean</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Support</a>
+                                                </li>
+                                            </template>
+                                        </submenu-item-card>
+                                        <submenu-item-card>
+                                            <template slot="title">STORAGE</template>
+                                            <template slot="list">
+                                                <li class="py-1.5">
+                                                    <a href="#">Spaces Object Storage</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Volumes Block Storage</a>
+                                                </li>
+                                            </template>
+                                        </submenu-item-card>
+                                        <submenu-item-card>
+                                            <template slot="title">NETWORKING</template>
+                                            <template slot="list">
+                                                <li class="py-1.5">
+                                                    <a href="#">Virtual Private Cloud (VPC)</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Cloud Firewalls</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Load Balancers</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Floating IPs</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">DNS</a>
+                                                </li>
+                                            </template>
+                                        </submenu-item-card>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#" class="py-1 px-2 item-image">Solutions</a>
+                            <div class="submenu text-black overflow-scroll">
+                                <div class="w-[85%] mx-auto">
+                                    <h2 class="font-bold tracking-wider">OUR SOLUTIONS</h2>
+                                    <ul class="mt-10 grid grid-cols-[repeat(3,1fr)] gap-y-10 gap-x-6">
+                                        <submenu-item>
+                                            <template slot="title">Websiste Hosting</template>
+                                            <template slot="body">Easily and realiably host a website</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Web & Mobile Apps</template>
+                                            <template slot="body">Quickly build and realiably run your apps</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Video Streaming Hosting</template>
+                                            <template slot="body">Create a highly available streaming service</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Gaming Development</template>
+                                            <template slot="body">Scale your game as fast as you want</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Cloud VPN</template>
+                                            <template slot="body">Quickly set up a fast, reliable, and easy to use VPN.</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Big Data Computing</template>
+                                            <template slot="body">Run batch and streaming big data workloads</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Startups</template>
+                                            <template slot="body">A cloud partnership to power your startup</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">SaaS Development</template>
+                                            <template slot="body">Build you SaaS exactly how you want</template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Agency & Web Dev Shops</template>
+                                            <template slot="body">Create powerful websites and applications for your 
+                                            clients
+                                            </template>
+                                        </submenu-item>
+                                        <submenu-item>
+                                            <template slot="title">Managed Cloud Hosting Providers</template>
+                                            <template slot="body">We make cloud hosting simple and cost-efficient</template>
+                                        </submenu-item>
+                                    </ul>
+                                    <div class="flex justify-center">
+                                        <a href="#">
+                                            <div class="font-medium text-gray-400 flex items-center py-1">
+                                                <span>See all solutions</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#" class="py-1 px-2 flex">Marketplace</a>
+                        </li>
+                        <li class="item">
+                            <a href="#" class="py-1 px-2 item-image">Community</a>
+                            <div class="submenu gradient text-black overflow-scroll pt-12">
+                                <div class="w-[90%] mx-auto grid grid-cols-[25%,75%]">
+                                    <div class="pr-5">
+                                        <h2 class="font-semibold tracking-wider mb-6">COMMUNITY</h2>
+                                        <ul>
+                                            <submenu-item-v2>
+                                                <template slot="title">Overview</template>
+                                                <template slot="body">Connect, share and learn</template>
+                                            </submenu-item-v2>
+                                            <submenu-item-v2>
+                                                <template slot="title">Tutorials</template>
+                                                <template slot="body">DevOps and development guides</template>
+                                            </submenu-item-v2>
+                                            <submenu-item-v2>
+                                                <template slot="title">Questions and Answers</template>
+                                                <template slot="body">Development and systems Q&A</template>
+                                            </submenu-item-v2>
+                                            <submenu-item-v2>
+                                                <template slot="title">Tools</template>
+                                                <template slot="body">Community-built integrations</template>
+                                            </submenu-item-v2>
+                                        </ul>
+                                    </div>
+                                    <ul class="pl-5 grid grid-cols-[30%,70%] gap-x-4">
+                                        <submenu-item-card>
+                                            <template slot="title">GET INVOLVED</template>
+                                            <template slot="list">
+                                                <li class="py-1.5">
+                                                    <a href="#">Write for Donations</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Meetups</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Hatch Starup Program</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Open Source Sponsorships</a>
+                                                </li>
+                                                <li class="py-1.5">
+                                                    <a href="#">Hacktoberfest</a>
+                                                </li>
+                                            </template>
+                                        </submenu-item-card>
+                                        <submenu-item-card>
+                                            <template slot="title">FEATURED ARTICLES</template>
+                                            <template slot="list">
+                                                <list-card style="margin-bottom: 2rem;">
+                                                    <template slot="image">
+                                                        <img src="./img/63808eba4b5c17be2c07d709771310e1ce75b6b6_article-1.avif" class="w-full object-cover object-center">
+                                                    </template>
+                                                    <template slot="title">How to Deploy a PHP Application with Kubernetes on Ubuntu 16.04</template>
+                                                </list-card>
+                                                <list-card style="margin-bottom: 2rem;">
+                                                    <template slot="image">
+                                                        <img src="./img/cf6d27910f0fd823c5d494cf3ca833a786c106c5_article-2.avif" class="w-full object-cover object-center">
+                                                    </template>
+                                                    <template slot="title">Understanding Database Sharding</template>
+                                                </list-card>
+                                                <list-card>
+                                                    <template slot="image">
+                                                        <img src="./img/3644243d4edcb457a5ad46f2eb3b858e846c8659_article-3.avif" class="w-full object-cover object-center">
+                                                    </template>
+                                                    <template slot="title">How to Build a Node.js Application with Docker</template>
+                                                </list-card>
+                                            </template>
+                                        </submenu-item-card>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="#" class="py-1 px-2 flex">Pricing</a>
+                        </li>
+                    </ul>
+                    <div class="ml-auto flex items-center">
+                        <button v-show="mode === 'light'" v-on:click="setDarkMode" class="w-10 h-10 rounded shadow flex items-center justify-center dark:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+                        <button v-show="mode === 'dark'" v-on:click="setLightMode" class="w-10 h-10 rounded shadow flex items-center justify-center dark:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="#" class="btn-primary transparent">Log In</a>
+                        <a href="#" class="btn-primary font-medium">Sign Up</a>
+                    </div>
+                    <button class="lg:hidden" id="offcanvas-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+            <nav class="offcanvas dark:bg-gray-900" id="offcanvas">
+                <div class="page-container mx-auto">
+                    <ul class="font-medium text-xl">
+                        <li class="py-5 sm:py-4 border-b offcanvas-item">
+                            <a href="#" class="w-full flex items-center justify-between dark:text-gray-300">
+                                Products
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="py-5 sm:py-4 border-b offcanvas-item">
+                            <a href="#" class="w-full flex items-center justify-between dark:text-gray-300">
+                                Solutions
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="py-5 sm:py-4 border-b offcanvas-item">
+                            <a href="#" class="w-full inline-block dark:text-gray-300">
+                                Marketplace
+                            </a>
+                        </li>
+                        <li class="py-5 sm:py-4 border-b offcanvas-item">
+                            <a href="#" class="w-full flex items-center justify-between dark:text-gray-300">
+                                Community
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="py-5 sm:py-4 border-b mb-4 offcanvas-item dark:text-gray-300">
+                            <a href="#" class="w-full inline-block">
+                                Pricing
+                            </a>
+                        </li>
+                        <li class="mb-4 offcanvas-item">
+                            <a href="#" class="btn-primary offcanvas-link">
+                                Sign Up
+                            </a>
+                        </li>
+                        <li class="mb-4 offcanvas-item">
+                            <a href="#" class="btn-primary transparent offcanvas-link">
+                                Log In
+                            </a>
+                        </li>
+                        <li class="mb-4 offcanvas-item">
+                            <a href="#" class="btn-primary transparent offcanvas-link">
+                                Block
+                            </a>
+                        </li>
+                        <li class="mb-4 offcanvas-item">
+                            <a href="#" class="btn-primary transparent offcanvas-link">
+                                Docs
+                            </a>
+                        </li>
+                        <li class="offcanvas-item">
+                            <a href="#" class="btn-primary transparent offcanvas-link">
+                                We're Hiring
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="hero-section dark:bg-gray-900">
+                <div class="h-full md:w-[90%] mx-auto">
+                    <div class="page-container mx-auto h-full grid lg:grid-cols-hero gap-8 lg:gap-5 lg:items-center">
+                        <div>
+                            <h1 class="font-bold text-do-blue-dark text-7xl mb-3 dark:text-gray-300">The cloud is complex. <br>
+                            We make it easier.</h1>
+                            <p class="font-medium text-gray-500 text-lg">Businesses grow faster when developers can build on the simple, affordable cloud they love. DigitalOcean 
+                            has the cloud computing services you need, with predictable pricing, robust documentation, and scalability 
+                            to support your growth at any stage.</p>
+                        </div>
+                        <form action="#" autocomplete="off">
+                            <h2 class="font-medium mb-3 dark:text-gray-300">Welcome to Digital Ocean. Sign up to get started!</h2>
+                            <div>
+                                <input type="text" placeholder="First name" class="form-input">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Email" class="form-input valid:bg-orange-100">
+                            </div>
+                            <div>
+                                <input type="password" placeholder="Password" class="form-input valid:bg-orange-100">
+                            </div>
+                            <div class="buttons-container flex gap-4 w-full">
+                                <input type="submit" value="Deploy in seconds" class="btn-primary py-4 cursor-pointer font-medium w-full">
+                                <button class="btn-login ml-auto">
+                                    <img src="./img/google.png" alt="Logo de Google" class="w-6/12 m-auto">
+                                </button>
+                                <button class="btn-login">
+                                    <img src="./img/github.png" alt="Logo de Github" class="w-6/12 m-auto">
+                                </button>
+                            </div>
+                            <span class="text-gray-500 inline-block mt-4">By signing up you agree to the 
+                                <a href="#" class="underline">Terms of Service</a> 
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="py-6 dark:bg-gray-900">
+                <div class="md:w-[90%] mx-auto">
+                    <div class="page-container mx-auto flex justify-between flex-wrap gap-6">
+                        <article class="flex items-center gap-2">
+                            <img src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjcyIiB2aWV3Qm94PSIwIDAgNzIgNzIiIHdpZHRoPSI3MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBzdHJva2U9IiMwMDNmOTkiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMzYiIGN5PSIzNiIgZmlsbD0iI2NlZTBmYSIgcj0iMjYiLz48ZWxsaXBzZSBjeD0iMzYiIGN5PSIzNiIgcng9IjEwIiByeT0iMjYiLz48ZWxsaXBzZSBjeD0iMzYiIGN5PSIzNiIgcng9IjEwIiByeT0iMjYiIHRyYW5zZm9ybT0ibWF0cml4KDAgMSAtMSAwIDcyIDApIi8+PGNpcmNsZSBjeD0iNTAuNSIgY3k9IjIxLjUiIGZpbGw9IiNmZmYiIHI9IjEyLjUiLz48cGF0aCBkPSJtNDQgMThzLjc2NTEtMSAyLTEgMiAxIDIgMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0ibTU2IDI0Yy0xLjMyNDYgMi4wNTctMy4wNTM0IDMtNS41IDNzLTQuMTc1NC0uOTQzLTUuNS0zIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJtNTMgMThzLjc2NTEtMSAyLTEgMiAxIDIgMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjxwYXRoIGQ9Im00MSAxMy0xLTIgMyAuNXoiIGZpbGw9IiMwMDNmOTkiLz48cGF0aCBkPSJtNjAgMzItMS0yIDMgLjV6IiBmaWxsPSIjMDAzZjk5Ii8+PC9zdmc+" alt="">
+                            <div>
+                                <h3 class="text-do-blue-dark font-bold text-5xl mb-1 dark:text-gray-300">598k</h3>
+                                <p class="text-gray-500 font-medium">Customers wordwide.</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center gap-2">
+                            <img src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjcyIiB2aWV3Qm94PSIwIDAgNzIgNzIiIHdpZHRoPSI3MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBzdHJva2U9IiMwMDNmOTkiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMzciIGN5PSI0NyIgZmlsbD0iI2NlZTBmYSIgcj0iMTgiLz48cGF0aCBkPSJtMjguMjMyNCAzMS45NTQ2LTExLTE5LjA1MjYiLz48cGF0aCBkPSJtMzEuNzIyOCA4LTEyLjk5MDQgNy41IDQuNSA3Ljc5NDIgNi4wNjIyLTMuNS4zODQgMi42NjUxIDE0LjcyMjQtOC41LTQuODQ4MS0yLjM5NzEuMzQ4MS01LjM5NzE0LTcuNzk0MiA0LjUwMDA0eiIvPjxlbGxpcHNlIGN4PSIzNi45OTk5IiBjeT0iNDYuOTk5OSIgcng9IjEwIiByeT0iMTgiIHRyYW5zZm9ybT0ibWF0cml4KC0uODY2MDI1NCAuNSAtLjUgLS44NjYwMjU0IDkyLjU0MjcwMyA2OS4yMDMwNTcpIi8+PC9nPjxjaXJjbGUgY3g9IjE2LjczMiIgY3k9IjEyLjAzNiIgZmlsbD0iIzAwM2Y5OSIgcj0iMiIgdHJhbnNmb3JtPSJtYXRyaXgoLjg2NjAyNTQgLS41IC41IC44NjYwMjU0IC0zLjc3NjMzNyA5Ljk3ODUxOCkiLz48cGF0aCBkPSJtNTguMDMxMSAxNi4yNjczYy4xNjExLS40MzU0Ljc3NjctLjQzNTQuOTM3OCAwbDEuMjA2OSAzLjI2MTVjLjA1MDYuMTM2OC4xNTg2LjI0NDguMjk1NC4yOTU0bDMuMjYxNSAxLjIwNjljLjQzNTQuMTYxMS40MzU0Ljc3NjcgMCAuOTM3OGwtMy4yNjE1IDEuMjA2OWMtLjEzNjguMDUwNi0uMjQ0OC4xNTg2LS4yOTU0LjI5NTRsLTEuMjA2OSAzLjI2MTVjLS4xNjExLjQzNTQtLjc3NjcuNDM1NC0uOTM3OCAwbC0xLjIwNjktMy4yNjE1Yy0uMDUwNi0uMTM2OC0uMTU4Ni0uMjQ0OC0uMjk1NC0uMjk1NGwtMy4yNjE1LTEuMjA2OWMtLjQzNTQtLjE2MTEtLjQzNTQtLjc3NjcgMC0uOTM3OGwzLjI2MTUtMS4yMDY5Yy4xMzY4LS4wNTA2LjI0NDgtLjE1ODYuMjk1NC0uMjk1NHoiIGZpbGw9IiNjZWUwZmEiIHN0cm9rZT0iIzAwM2Y5OSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0ibTEwIDMwdjYiIHN0cm9rZT0iIzAwM2Y5OSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJtMTMgMzNoLTYiIHN0cm9rZT0iIzAwM2Y5OSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=" alt="">
+                            <div>
+                                <h3 class="text-do-blue-dark font-bold text-5xl mb-1 dark:text-gray-300">185</h3>
+                                <p class="text-gray-500 font-medium">Countries we serve.</p>
+                            </div>
+                        </article>
+                        <article class="flex items-center gap-2">
+                            <img src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjcyIiB2aWV3Qm94PSIwIDAgNzIgNzIiIHdpZHRoPSI3MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Im01MS4zMzI3IDU5YzYuNDY2OS00LjcyOTcgMTAuNjY3My0xMi4zNzQzIDEwLjY2NzMtMjEgMC0xNC4zNTk0LTExLjY0MDYtMjYtMjYtMjZzLTI2IDExLjY0MDYtMjYgMjZjMCA4LjYyNTcgNC4yMDA0IDE2LjI3MDMgMTAuNjY3MyAyMXoiIGZpbGw9IiNjZWUwZmEiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjxwYXRoIGQ9Im01MS4zMzI3IDU5djFoLjMyNjdsLjI2MzctLjE5Mjh6bS0zMC42NjU0IDAtLjU5MDQuODA3Mi4yNjM3LjE5MjhoLjMyNjd6bTQwLjMzMjctMjFjMCA4LjI5MzItNC4wMzcxIDE1LjY0MzMtMTAuMjU3NiAyMC4xOTI4bDEuMTgwNyAxLjYxNDRjNi43MTMzLTQuOTEgMTEuMDc2OS0xMi44NDkxIDExLjA3NjktMjEuODA3MnptLTI1LTI1YzEzLjgwNzEgMCAyNSAxMS4xOTI5IDI1IDI1aDJjMC0xNC45MTE3LTEyLjA4ODMtMjctMjctMjd6bS0yNSAyNWMwLTEzLjgwNzEgMTEuMTkyOS0yNSAyNS0yNXYtMmMtMTQuOTExNyAwLTI3IDEyLjA4ODMtMjcgMjd6bTEwLjI1NzYgMjAuMTkyOGMtNi4yMjA1LTQuNTQ5NS0xMC4yNTc2LTExLjg5OTYtMTAuMjU3Ni0yMC4xOTI4aC0yYzAgOC45NTgxIDQuMzYzNiAxNi44OTcyIDExLjA3NjkgMjEuODA3MnptLS41OTAzIDEuODA3MmgzMC42NjU0di0yaC0zMC42NjU0eiIgZmlsbD0iIzAwM2Y5OSIvPjxnIHN0cm9rZT0iIzAwM2Y5OSIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJtMzYgMTJ2NiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0ibTE3LjYxNTIgMTkuNjE1MiA0LjI0MjcgNC4yNDI3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJtNTQuMzg0OCAxOS42MTUyLTQuMjQyNyA0LjI0MjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Im0xMCAzOGg2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJtNTYgMzhoNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0ibTUwLjE0MjYgNTIuMTQyMSA0LjI0MjYgNC4yNDI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJtMjEuODU3NCA1Mi4xNDItNC4yNDI2IDQuMjQyNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0ibTMxLjk3MzMgMzUuNDU3MSAxMS42MjIzLTExLjc3NzhjLjM2MTgtLjM2NjYuOTc0Ni0uMDEyOC44MzguNDgzOGwtNC4zODg3IDE1Ljk1NDEtNC4wMzU4LTIuMzMwMXoiLz48Y2lyY2xlIGN4PSIzNiIgY3k9IjM4IiBmaWxsPSIjZmZmIiByPSI2Ii8+PHJlY3QgZmlsbD0iI2ZmZiIgaGVpZ2h0PSI1IiByeD0iMSIgd2lkdGg9IjE2IiB4PSIyOCIgeT0iNDkiLz48cGF0aCBkPSJtMzkgNDl2NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0ibTMzIDQ5djUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48L3N2Zz4=" alt="">
+                            <div>
+                                <h3 class="text-do-blue-dark font-bold text-5xl mb-1 dark:text-gray-300">99.99%</h3>
+                                <p class="text-gray-500 font-medium">Uptime SLA for VMs & Block Storage.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="py-6 bg-gray-300 overflow-hidden dark:bg-gray-600" id="brands">
+                <div class="page-container carousel mx-auto">
+                    <div class="flex gap-3 -ml-32 mb-4">
+                        <article class="carousel-card flex justify-center items-center shrink-0 dark:bg-gray-900">
+                            <img src="img/gitlab-logo-gray-rgb.png" alt="Logo de Gitlab" class="w-7/12">
+                        </article>
+                        <article class="carousel-card p-3 text-sm font-medium flex flex-col shrink-0 dark:bg-gray-900">
+                            <header class="flex items-center">
+                                <img src="/img/Whatfix_logo_Cyan.png" alt="Logo de WhatFix" class="w-3/12 border-r-2 pr-1">
+                                <span class="pl-1 dark:text-gray-300">SaaS</span>
+                            </header>
+                            <main class="mt-3 dark:text-gray-300">
+                                <p>"What we really love about the DigitalOcean platform is the ease of use."</p>
+                            </main>
+                            <footer class="mt-auto text-gray-500">
+                                <p>Achyuth Krishna, Director of Engineering</p>
+                            </footer>
+                        </article>
+                        <article class="carousel-card flex justify-center items-center shrink-0 dark:bg-gray-900">
+                            <img src="img/Slack-Logo.png" alt="Logo de Gitlab" class="w-7/12">
+                        </article>
+                        <article class="carousel-card p-3 text-sm font-medium flex flex-col shrink-0 dark:bg-gray-900">
+                            <header class="flex items-center">
+                                <img src="/img/Whatfix_logo_Cyan.png" alt="Logo de WhatFix" class="w-3/12 border-r-2 pr-1">
+                                <span class="pl-1 dark:text-gray-300">SaaS</span>
+                            </header>
+                            <main class="mt-3 dark:text-gray-300">
+                                <p>"What we really love about the DigitalOcean platform is the ease of use."</p>
+                            </main>
+                            <footer class="mt-auto text-gray-500">
+                                <p>Achyuth Krishna, Director of Engineering</p>
+                            </footer>
+                        </article>
+                        <article class="carousel-card flex justify-center items-center shrink-0 dark:bg-gray-900">
+                            <img src="img/36722834-e6a79ce4-1bae-11e8-842c-a92a64c1b84f.png" alt="Logo de Gitlab" class="w-7/12">
+                        </article>
+                    </div>
+                    <div class="flex gap-3 -ml-44">
+                        <article class="carousel-card flex justify-center items-center shrink-0 dark:bg-gray-900">
+                            <img src="img/2019-WPMUDEV-Blue@2x.webp" alt="Logo de Gitlab" class="w-7/12">
+                        </article>
+                        <article class="carousel-card p-3 text-sm font-medium flex flex-col shrink-0 dark:bg-gray-900">
+                            <header class="flex items-center">
+                                <img src="/img/Whatfix_logo_Cyan.png" alt="Logo de WhatFix" class="w-3/12 border-r-2 pr-1">
+                                <span class="pl-1 dark:text-gray-300">SaaS</span>
+                            </header>
+                            <main class="mt-3 dark:text-gray-300">
+                                <p>"What we really love about the DigitalOcean platform is the ease of use."</p>
+                            </main>
+                            <footer class="mt-auto text-gray-500">
+                                <p>Achyuth Krishna, Director of Engineering</p>
+                            </footer>
+                        </article>
+                        <article class="carousel-card flex justify-center items-center shrink-0 dark:bg-gray-900">
+                            <img src="img/HashiCorp_Logo.png" alt="Logo de Gitlab" class=" w-7/12">
+                        </article>
+                        <article class="carousel-card p-3 text-sm font-medium flex flex-col shrink-0 dark:bg-gray-900">
+                            <header class="flex items-center">
+                                <img src="/img/Whatfix_logo_Cyan.png" alt="Logo de WhatFix" class="w-3/12 border-r-2 pr-1">
+                                <span class="pl-1 dark:text-gray-300">SaaS</span>
+                            </header>
+                            <main class="mt-3 dark:text-gray-300">
+                                <p>"What we really love about the DigitalOcean platform is the ease of use."</p>
+                            </main>
+                            <footer class="mt-auto text-gray-500">
+                                <p>Achyuth Krishna, Director of Engineering</p>
+                            </footer>
+                        </article>
+                        <article class="carousel-card flex justify-center items-center shrink-0 dark:bg-gray-900">
+                            <img src="img/Ghost-Simbolo.png" alt="Logo de Gitlab" class=" w-7/12">
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding dark:bg-gray-900">
+                <div class="page-container mx-auto">
+                    <h2 class="text-5xl font-bold text-do-blue-dark mb-8 dark:text-gray-300">Cloud computing with <br /> simplicity as its 
+                    core.</h2>
+                    <div class="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap3">
+                        <article class="text-gray-600 font-medium">
+                            <p class="lg:w-10/12">Build robust applications using a comprehensive portfolio of compute, storage, database and 
+                            networking products.</p>
+                            <a 
+                                href="#" 
+                                class="cascadia-link group"
+                            >Explore our products
+                                <div class="w-5 h-5 bg-do-blue-light mask-image group-hover:translate-x-2 transition-transform"></div>
+                            </a>
+                        </article>
+                        <article class="text-gray-600 font-medium">
+                            <p class="lg:w-10/12">Our simple UI, CLI, API, and docs enable you to spend time on your business while we focus 
+                            on the infrastructure.</p>
+                            <a 
+                                href="#" 
+                                class="cascadia-link group"
+                            >Read the Docs
+                                <div class="w-5 h-5 bg-do-blue-light mask-image group-hover:translate-x-2 transition-transform"></div>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="video-container mt-10">
+                        <video src="/video/control-panel-video.mp4" controls></video>
+                    </div>
+                    <div class="grid lg:grid-cols-[1fr_1fr] gap-8 mt-8">
+                        <img src="/img/terminal-image.svg" alt="Imagen de Terminal" class="w-full h-full">
+                        <div class="grid gap-4 lg:grid-rows-[60%_min-content] content-between">
+                            <img src="/img/droplet-console-image.svg" alt="Imagen de Consola" class="w-full h-full shadow-lg rounded-lg">
+                            <div class="flex items-end justify-between">
+                                <div class="py-2 px-3 shadow-lg rounded-lg w-[85%]">
+                                    <p class="font-medium text-gray-500">“We were able to scale our application by almost 250% while keeping costs the same as what we 
+                                    spent at the beginning.” <br>
+                                    — Ravi Mittal, CEO, Vuukle
+                                    </p>
+                                </div>
+                                <div class="logo-container">
+                                    <img src="/img/vuukle-logo.svg" alt="Logo de Vuukle" class="w-7/12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding dark:bg-gray-900">
+                <div class="page-container mx-auto bg-gray-200 px-12 py-16 rounded-lg relative dark:bg-gray-600">
+                    <div class="grid lg:grid-cols-[1fr_1fr] gap-y-8">
+                        <div class="article">
+                            <h2 class="article-title">Scale up with confidence</h2>
+                            <p class="mb-3 dark:text-gray-300">Keep costs in check even when you scale your apps with affordable, predictable pricing.</p>
+                            <p class="dark:text-gray-300">Expand your business using our 14 globally distributed data centers and a <span class="underline text-do-blue-light">99.99%</span> 
+                            uptime SLA.</p>
+                            <a 
+                                href="#" 
+                                class="cascadia-link group"
+                            >View pricing
+                                <div class="w-5 h-5 bg-do-blue-light mask-image group-hover:translate-x-2 transition-transform"></div>
+                            </a>
+                        </div>
+                        <img src="./img/artboard_copy_45_4x.webp" class="justify-self-center">
+                    </div>
+                    <div class="flex justify-between flex-wrap gap-y-5 mt-20">
+                        <article class="w-[260px]">
+                            <h2 class="text-4xl font-bold text-do-blue-dark mb-4 dark:text-gray-300">598k</h2>
+                            <p class="text-gray-500 w-10/12 dark:text-gray-300">Customers building on DigitalOcean.</p>
+                        </article>
+                        <article class="w-[260px]">
+                            <h2 class="text-4xl font-bold text-do-blue-dark mb-4 dark:text-gray-300">185</h2>
+                            <p class="text-gray-500 w-10/12 dark:text-gray-300">Countries our customers are based in.</p>
+                        </article>
+                        <article class="w-[260px]">
+                            <h2 class="text-4xl font-bold text-do-blue-dark mb-4 dark:text-gray-300">14</h2>
+                            <p class="text-gray-500 w-10/12 dark:text-gray-300">Globally distributed data centers.</p>
+                        </article>
+                        <article class="w-[260px]">
+                            <h2 class="text-4xl font-bold text-do-blue-dark mb-4 dark:text-gray-300">99.99%</h2>
+                            <p class="text-gray-500 w-10/12 dark:text-gray-300">Uptime SLA for Droplets and Block Storage.</p>
+                        </article>
+                    </div>
+                    <div class="flex items-end gap-6 sm:absolute left-0 top-[92%] mt-20 sm:mt-0">
+                        <div class="logo-container w-20 h-20 bg-white dark:bg-gray-500">
+                            <img src="/img/vidgyor.svg" alt="Logo de Vidgyor" class="w-7/12">
+                        </div>
+                        <div class="font-medium rounded-lg shadow-lg py-10 px-8 w-[80%] lg:w-[60%] bg-white dark:bg-gray-500">
+                            <p class="mb-4 dark:text-gray-300">"We love the developer experience, we can accurately predict our costs, and can scale
+                            up or down as the traffic grows."</p>
+                            <p class="text-gray-400">- Mahaboob Khan, Cofunder and CEO, Vidgyor</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding bg-gray-200 dark:bg-gray-600">
+                <div class="page-container mx-auto">
+                    <div class="grid lg:grid-cols-[repeat(3,1fr)] gap-8 lg:items-center lg:gap-0">
+                        <article class="article lg:pr-8">
+                            <h2 class="article-title">See what you can save.</h2>
+                            <p class="dark:text-gray-300">DigitalOcean consistently outperforms other cloud 
+                            providers on price, while delivering the same performance you need tosucceed.</p>
+                            <a 
+                                href="#" 
+                                class="cascadia-link group"
+                            >Calculate your savings
+                                <div class="w-5 h-5 bg-do-blue-light mask-image group-hover:translate-x-2 transition-transform"></div>
+                            </a>
+                        </article>
+                        <article class="bg-do-blue-dark rounded-md text-white px-4 py-5 text-sm">
+                            <h2 class="font-bold text-3xl mb-3">Basic VMs</h2>
+                            <p class="mb-5">Easy, fast, and flexible compute built for a range of needs.</p>
+                            <ul>
+                                <li class="py-3 border-b flex items-center justify-between">
+                                    <span>CPUs</span>
+                                    <span>2</span>
+                                </li>
+                                <li class="py-3 border-b flex items-center justify-between">
+                                    <span>Memory</span>
+                                    <span>4 GB</span>
+                                </li>
+                                <li class="py-3 border-b flex items-center justify-between">
+                                    <span>Storage</span>
+                                    <span>80 GB</span>
+                                </li>
+                                <li class="py-3 flex items-center justify-between">
+                                    <span>Transfer</span>
+                                    <span>4 TB</span>
+                                </li>
+                            </ul>
+                            <div class="flex items-center gap-2 mt-12">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </div>
+                        </article>
+                        <article class="px-4 py-5 bg-white text-sm rounded-md dark:bg-gray-500">
+                            <h2 class="font-bold text-3xl mb-3 dark:text-gray-300">Monthly cost</h2>
+                            <p class="mb-5">Estimated monthly spend</p>
+                            <ul class="font-medium">
+                                <li class="py-3 border-b flex items-center justify-between relative dark:text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <img src="/img/digital-ocean.svg" alt="Logo de Digital Ocean">
+                                        <span>Digital Ocean</span>
+                                    </div>
+                                    <div class="w-3.5 h-8 bg-do-blue-dark rounded-tr rounded-br absolute left-[50%] translate-x-[-50%]"></div>
+                                    <span>$20/mo</span>
+                                </li>
+                                <li class="py-3 border-b flex items-center justify-between relative dark:text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <img src="/img/gcp.svg" alt="Logo de GCP">
+                                        <span>GCP</span>
+                                    </div>
+                                    <div class="w-4 h-8 bg-do-blue-dark rounded-tr rounded-br absolute left-[50%] translate-x-[-50%]"></div>
+                                    <span>$29/mo</span>
+                                </li>
+                                <li class="py-3 border-b flex items-center justify-between relative dark:text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <img src="/img/aws.svg" alt="Logo de AWS">
+                                        <span>AWS</span>
+                                    </div>
+                                    <div class="w-[1.125rem] h-8 bg-do-blue-dark rounded-tr rounded-br absolute left-[50%] translate-x-[-50%]"></div>
+                                    <span>$30.46/mo</span>
+                                </li>
+                                <li class="py-3 flex items-center justify-between relative dark:text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <img src="/img/azure.svg" alt="Logo de Azure">
+                                        <span>Azure</span>
+                                    </div>
+                                    <div class="w-5 h-8 bg-do-blue-dark rounded-tr rounded-br absolute left-[50%] translate-x-[-50%]"></div>
+                                    <span>$30.37/mo</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding dark:bg-gray-900">
+                <div class="page-container mx-auto">
+                    <div class="md:w-[80%] lg:w-1/2 mx-auto text-center font-medium">
+                        <h2 class="font-bold text-5xl mb-5 dark:text-gray-300">Build alongside a robust and supportive community like you</h2>
+                        <p class="mb-5 text-gray-500">Quickly learn new tech concepts, programming languages, and get 
+                        answers to your questions from a vibrant developer community.</p>
+                        <a href="#" class="btn-primary font-medium py-3"> Explore the community</a>
+                    </div>
+                    <div class="flex justify-center sm:justify-between flex-wrap mt-14 gap-y-8 lg:w-[90%] mx-auto">
+                        <article class="text-gray-500 font-medium w-[260px] text-center sm:text-left">
+                            <h3 class="text-do-blue-medium font-bold text-4xl mb-2 sm:mb-0">3K+</h3>
+                            <p>In depth-technical tutorials for developers</p>
+                        </article>
+                        <article class="text-gray-500 font-medium w-[260px] text-center sm:text-left">
+                            <h3 class="text-do-blue-medium font-bold text-4xl mb-2 sm:mb-0">3.5M</h3>
+                            <p>Visits per month to our community site</p>
+                        </article>
+                        <article class="text-gray-500 font-medium w-[260px] text-center sm:text-left">
+                            <h3 class="text-do-blue-medium font-bold text-4xl mb-2 sm:mb-0">170K</h3>
+                            <p>Participants in our 2020 hackathon</p>
+                        </article>
+                        <article class="text-gray-500 font-medium w-[260px] text-center sm:text-left">
+                            <h3 class="text-do-blue-medium font-bold text-4xl mb-2 sm:mb-0">30K+</h3>
+                            <p>Questions answered in our community</p>
+                        </article>
+                    </div>
+                    <section class="mt-16 grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-6">
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/how-to-install-mysql-tutorial-image.jpg" alt="MySQL" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">TUTORIAL</template>
+                            <template slot="title">How To Install MySQL on Ubuntu 20.4</template>
+                            <template slot="date">Julio 30, 2020</template>
+                            <template slot="views">319k</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/how-to-deploy-a-react-app-tutorial-image.jpg" alt="React" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">TUTORIAL</template>
+                            <template slot="title">How To Deploy a React Application to DigitalOcean App Platform</template>
+                            <template slot="date">December 18, 2020</template>
+                            <template slot="views">22.8k</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/how-to-scale-your-saas-product-blog-image.jpg" alt="SASS" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">BLOG</template>
+                            <template slot="title">How To Scale your SaaS product without breaking the bank</template>
+                            <template slot="date">June 22, 2021</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/how-to-install-nodejs-tutorial-image.jpg" alt="NodeJS" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">TUTORIAL</template>
+                            <template slot="title">How To Install Node.js on Ubuntu 20.04</template>
+                            <template slot="date">August 9, 2020</template>
+                            <template slot="views">273.1</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/how-to-code-in-python-tutorial-image.jpg" alt="Phyton" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">TUTORIAL</template>
+                            <template slot="title">How to code in Phyton</template>
+                            <template slot="date">August 23, 2021</template>
+                            <template slot="views">16.1m</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/contributing-to-open-source-blog-image.jpg" alt="Open Source" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">BLOG</template>
+                            <template slot="title">Contributing to open source software: Kubernetes</template>
+                            <template slot="date">June 15, 2021</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/multi-cloud-vs-hybrid-cloud-blog-image.jpg" alt="" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">BLOG</template>
+                            <template slot="title">Multi-cloud vs hybrid cloud: Everything your business needs to know</template>
+                            <template slot="date">June 22, 2021</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/introducing-digitalocean-managed-mongodb-blog-image.jpg" alt="MongoDB" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">BLOG</template>
+                            <template slot="title">Introducing Digital Ocean Managed MongoDB - a fully managed, database as service for modern apps</template>
+                            <template slot="date">June 19, 2021</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/how-to-install-mysql-tutorial-image.jpg" alt="MySQL" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">TUTORIAL</template>
+                            <template slot="title">How To Install MySQL on Ubuntu 20.4</template>
+                            <template slot="date">Julio 30, 2020</template>
+                            <template slot="views">319k</template>
+                        </panel-card>
+                        <panel-card>
+                            <template slot="image">
+                                <img src="/img/how-to-deploy-a-react-app-tutorial-image.jpg" alt="React" class="w-full h-full object-cover">
+                            </template>
+                            <template slot="type">TUTORIAL</template>
+                            <template slot="title">How To Deploy a React Application to DigitalOcean App Platform</template>
+                            <template slot="date">December 18, 2020</template>
+                            <template slot="views">22.8k</template>
+                        </panel-card>
+                    </section>
+                </div>
+            </section>
+            <div class="dark:bg-gray-900">
+                <div class="w-full sm:w-[90%] mx-auto">
+                    <div class="account-hero">
+                        <div>
+                            <h3 class="font-bold text-4xl mb-5">Start building today</h3>
+                            <p>Sign up now and you'll be up and running on DigitalOcen in just minutes.</p>
+                        </div>
+                        <a href="#" class="btn-primary white w-fit h-fit font-semibold">Create your account</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="section-padding dark:bg-gray-900">
+            <div class="page-container mx-auto">
+                <div class="grid grid-cols-[repeat(2,1fr)] md:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-y-8 lg:w-[90%] mx-auto">
+                    <div class="font-medium">
+                        <h3 class="font-semibold text-xl mb-4 dark:text-gray-300">Company</h3>
+                        <ul class="text-gray-400">
+                            <li class="py-1">
+                                <a href="#">
+                                    About
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Leaderships
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Carrers
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Customers
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Partners  
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Referral Program
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Press
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Legal
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Trust Platform
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Investor Relations
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="font-medium">
+                        <h3 class="font-semibold text-xl mb-4 dark:text-gray-300">Products</h3>
+                        <ul class="text-gray-400">
+                            <li class="py-1">
+                                <a href="#">
+                                    Product Overview
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Droplets
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Kubernetes
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Managed Databases
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Spaces
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Marketplaces
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Load Balancers
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Block Storage
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Tools and Integrations
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    API
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Pricing
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Documentation
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Release Notes
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="font-medium">
+                        <h3 class="font-semibold text-xl mb-4 dark:text-gray-300">Community</h3>
+                        <ul class="text-gray-400">
+                            <li class="py-1">
+                                <a href="#">
+                                    Tutorials
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Meetups
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Q&A
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Write for Donations
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Droplets for Demos
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Hatch Startup Program
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Shop Swag
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Research Program
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Currents Research
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Open Source
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Code of Conduct
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Newsletter Signup
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="font-medium">
+                        <h3 class="font-semibold text-xl mb-4 dark:text-gray-300">Solutions</h3>
+                        <ul class="text-gray-400">
+                            <li class="py-1">
+                                <a href="#">
+                                    Web and Mobile Apps
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Website Hosting
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Game Development
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Streaming
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    VPN
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Startups
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    SaaS Solutions
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Agency & Web Dev Shops
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Managed Cloud Hosting Providers
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Big Data
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Business Solutions
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="font-medium">
+                        <h3 class="font-semibold text-xl mb-4 dark:text-gray-300">Contact</h3>
+                        <ul class="text-gray-400">
+                            <li class="py-1">
+                                <a href="#">
+                                    Support 
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Sales
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Report Abuse
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    System Status  
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="#">
+                                    Share your ideas
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page-container mx-auto mt-8">
+                <div class="flex items-center justify-center md:justify-between gap-5 flex-wrap text-gray-400 font-medium pt-12 border-t-2">
+                    <div class="flex items-center gap-2">
+                        <img src="/img/digital-ocean.svg" alt="Logo de DigitalOcean">
+                        <p>© 2022 DigitalOcean, LLC, All rights reserved.</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <a href="#">
+                            <img src="/img/twitch-social-icon.svg" alt="Logo de Twitch">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/twitter-social-icon.svg" alt="Logo de Twitter">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/instagram-social-icon.svg" alt="Logo de Instagra">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/facebook-social-icon.svg" alt="Logo de Facebook">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/youtube-social-icon.svg" alt="Logo de Youtube">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/linkedin-social-icon.svg" alt="Logo de Linkedin">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/dev-social-icon.svg" alt="Logo de Dev">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/glassdoor-social-icon.svg" alt="Logo de Glassdoor">
+                        </a> 
+                        <a href="#">
+                            <img src="/img/builtin-social-icon.svg" alt="Logo de Builtin">
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/app.js" type="module"></script>
+    <script src="/js/script.js" type="module"></script>
+</body>
+</html>

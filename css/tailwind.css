@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@font-face {
+    font-family: "CascadiaCode"; 
+    src: url(/fonts/CascadiaCode.ttf);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-primary{
+        @apply py-2 px-4 bg-do-blue-light rounded text-white hover:bg-do-blue-medium active:bg-do-blue-dark inline-block;
+    }
+
+    .btn-primary.transparent{
+        @apply text-black bg-white border hover:bg-sky-100 dark:bg-transparent dark:text-gray-300;
+    }
+
+    .btn-primary.white{
+        @apply bg-white text-do-blue-light;
+    }
+
+    .btn-login{
+        @apply bg-gray-200 rounded w-14 hover:bg-gray-300;
+    }
+
+    .offcanvas-link{
+        @apply w-full text-center py-3;
+    }
+
+    .item-image{
+        @apply flex items-center gap-2 after:content-[''] after:w-2.5 after:h-2.5 after:bg-[url('/img/down-arrow.png')] after:block after:bg-no-repeat after:bg-contain after:bg-center after:transition-transform;
+    }
+
+    .form-input{
+        @apply border rounded py-3 px-2 mb-4 outline-none w-full border-gray-400 focus:border-gray-600 shadow-sm;
+    }
+
+    .hero-section{
+        @apply py-12 lg:py-0 lg:h-[calc(100vh-var(--header-size))] bg-[url(/img/hero-bg-animation-ef666767f909d3b76122f0279a8bf16d.svg)] bg-no-repeat bg-center bg-cover;
+    }
+
+    .carousel-card{
+        @apply bg-white rounded-md shadow-md w-72 h-48;
+    }
+
+    .video-container{
+        @apply grid grid-cols-[repeat(16,1fr)] grid-rows-[repeat(9,1fr)] relative after:content-[""] after:block after:pb-[100%];
+    }
+
+    .video-container > video{
+        @apply absolute w-full h-full;
+    }
+
+    
+    .cascadia-link{
+        @apply mt-4 text-do-blue-light hover:text-do-blue-medium font-semibold font-cascadia flex items-center gap-1 w-fit;
+    }
+
+    .logo-container{
+        @apply shadow-lg rounded-lg w-[10%] h-16 flex justify-center items-center;
+    }
+
+    .article{
+        @apply text-gray-600 font-medium;
+    }
+
+    .article-title{
+        @apply text-5xl font-bold text-do-blue-dark mb-3 dark:text-gray-300;
+    }
+
+    .section-padding{
+        @apply py-[4.5rem] lg:py-24;
+    }
+
+    .hero-bg{
+        @apply bg-[url('/img/new-cta-band-bg-image.jpg')] bg-cover bg-no-repeat bg-center;
+    }
+
+    .submenu{
+        @apply absolute top-full left-0 w-full min-h-[calc(100vh-var(--header-size))] h-full pt-8 bg-gray-50 hidden;
+    }
+
+    .submenu.show{
+        @apply block;
+    }
+
+    .page-container{
+        @apply container w-[90%] sm:w-full;
+    }
+
+    @media screen and (max-width: 640px){
+        .page-container.carousel{
+            max-width: var(--carousel-max-w);
+        }
+    }
+
+    .account-hero{
+        @apply md:h-[300px] py-10 md:py-0 sm:rounded-md grid gap-8 md:gap-0 md:grid-cols-[1fr,1fr] md:items-center md:justify-items-center px-8 md:px-16 lg:px-20 text-white hero-bg;
+    }
+
+    .offcanvas{
+        @apply absolute top-full left-0 w-full min-h-[calc(100vh-var(--header-size))] h-full bg-white hidden overflow-y-scroll;
+    }
+
+    .offcanvas.show{
+        @apply block;
+    }
+}
+
+
+:root{
+    --header-size: 0;
+}
+
+body > #app{
+    display: grid;
+    grid-template-rows: auto min-content;
+    min-height: calc(100vh - var(--header-size));
+    margin-top: var(--header-size);
+}
+
+html{
+    font-size: 0.8125rem;
+    scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 20rem){
+    html{
+        font-size: calc(0.8125rem + 0.1875 * ((100vw - 20rem) / 61.25));
+    }
+}
+
+@media screen and (min-width: 81.25rem){
+    html{
+        font-size: 1rem;
+    }
+}
+
+.mask-image{
+    mask: url(/img/right-arrow.png);
+    mask-size: 30%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+#brands{
+    --carousel-max-w: 0;
+}
+
+.item-image.open::after{
+    transform: rotateX(180deg);
+}
+
+.submenu.gradient{
+    background: linear-gradient(to right, rgb(224, 242, 254) 26.6666666667%, white 26.6666666667%);
+}
