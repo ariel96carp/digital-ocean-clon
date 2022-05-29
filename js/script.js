@@ -60,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (submenu){
                     const areOpenSubmenus = await hideSubmenuOnOpen(index)
                     const itemLink = submenu.previousElementSibling
+                    submenu.scrollTo(0, 0)
                     itemLink.classList.toggle("open")
                     submenu.classList.toggle("show")
                     toggleBodyOverflow(areOpenSubmenus)
