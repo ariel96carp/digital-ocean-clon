@@ -7,7 +7,7 @@
     "dev": "vite",
     "production": "vite build",
     "preview": "vite preview",
-    "postcss-prod": "SET NODE_ENV=production postcss ./css/tailwind.css -o ./css/postcss.css"
+    "postcss-prod": "SET NODE_ENV=production & postcss ./css/tailwind.css -o ./css/postcss.css"
   },
   "keywords": [],
   "author": "",
