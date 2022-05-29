@@ -106,6 +106,10 @@
     .offcanvas.show{
         @apply block;
     }
+
+    .subitem-card-list a:hover{
+        @apply text-gray-700;
+    }
 }
 
 

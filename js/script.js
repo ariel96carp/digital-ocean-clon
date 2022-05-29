@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (submenu){
                     if (i !== indexGiven){
                         if (submenu.classList.contains("show")){
+                            submenu.scrollTo(0, 0)
                             const itemLink = submenu.previousElementSibling
                             submenu.classList.toggle("show")
                             itemLink.classList.toggle("open")
