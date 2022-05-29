@@ -8,7 +8,8 @@ window.addEventListener("DOMContentLoaded", () => {
             document.documentElement.style.setProperty("--header-size", `${headerHeight}px`)
         }
     }
-    setHeaderSize()
+
+    window.addEventListener("load", setHeaderSize)
     window.addEventListener("resize", setHeaderSize)
 
     const toggleBodyOverflow = (areOpenSubmenus = false) => {
