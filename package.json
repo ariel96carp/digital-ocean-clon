@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "production": "vite build",
     "preview": "vite preview",
     "postcss-dev": "SET NODE_ENV=dev&postcss ./css/tailwind.css -o ./css/npm.css",
