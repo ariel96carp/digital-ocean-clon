@@ -1,4 +1,4 @@
-Vue.component("panel-card", {
+Vue.component('panel-card', {
     template: `
         <article class="rounded-md shadow-lg hover:shadow-2xl transition-shadow duration-75 bg-white overflow-hidden font-medium md:text-sm cursor-pointer h-[360px] dark:bg-gray-600">
             <div class="h-[40%]">
@@ -30,7 +30,7 @@ Vue.component("panel-card", {
     `
 })
 
-Vue.component("submenu-item", {
+Vue.component('submenu-item', {
     template: `
         <li class="hover:bg-sky-100 px-3 py-4 rounded-lg group w-fit">
             <a href="#">
@@ -45,7 +45,7 @@ Vue.component("submenu-item", {
     `
 })
 
-Vue.component("submenu-item-v2", {
+Vue.component('submenu-item-v2', {
     template: `
         <li class="hover:bg-sky-200 px-3 py-4 rounded-xl group w-full">
             <a href="#">
@@ -60,7 +60,7 @@ Vue.component("submenu-item-v2", {
     `
 })
 
-Vue.component("submenu-item-card", {
+Vue.component('submenu-item-card', {
     template: `
         <li>
             <h3 class="font-semibold tracking-wider mb-4">
@@ -73,7 +73,7 @@ Vue.component("submenu-item-card", {
     `
 })
 
-Vue.component("list-card", {
+Vue.component('list-card', {
     template: `
         <li class="group">
             <a href="#">
@@ -91,26 +91,26 @@ Vue.component("list-card", {
 })
 
 new Vue ({
-    el: "#app",
+    el: '#app',
     data:{
-        mode: "light"
+        mode: 'light'
     },
     methods:{
         setDarkMode(){
-            this.mode = "dark"
-            const appWrapper = document.getElementById("app")
-            if (appWrapper.classList.contains("light")){
-                appWrapper.classList.remove("light")
+            this.mode = 'dark'
+            const appWrapper = document.getElementById('app')
+            if (appWrapper.classList.contains('light')){
+                appWrapper.classList.remove('light')
             }
-            appWrapper.classList.add("dark")
+            appWrapper.classList.add('dark')
         },
         setLightMode(){
-            this.mode = "light"
-            const appWrapper = document.getElementById("app")
-            if (appWrapper.classList.contains("dark")){
-                appWrapper.classList.remove("dark")
+            this.mode = 'light'
+            const appWrapper = document.getElementById('app')
+            if (appWrapper.classList.contains('dark')){
+                appWrapper.classList.remove('dark')
             }
-            appWrapper.classList.add("light")
+            appWrapper.classList.add('light')
         }
     }
 })
