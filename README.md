@@ -26,9 +26,9 @@ npm run production
 ![Overview](./img/localhost_3000_.png)
 ![Overview](./img/localhost_3000_%20(3).png)
 ![Overview](./img/localhost_3000_%20(4).png)
+![Overview](./img/localhost_3000_(Samsung%20Galaxy%20S8%2B).png)
 ![Overview](./img/localhost_3000_%20(6).png)
 ![Overview](./img/localhost_3000_%20(7).png)
-![Overview](./img/localhost_3000_(Samsung%20Galaxy%20S8%2B).png)
 
 ## Deploy
 [https://digitalocean-clon.netlify.app](https://digitalocean-clon.netlify.app)
