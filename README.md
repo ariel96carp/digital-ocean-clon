@@ -27,6 +27,7 @@ npm run production
 ![Overview](./img/localhost_3000_%20(3).png)
 ![Overview](./img/localhost_3000_%20(4).png)
 ![Overview](./img/localhost_3000_(Samsung%20Galaxy%20S8%2B).png)
+![Overview](./img/localhost_3000_%20(2).png)
 ![Overview](./img/localhost_3000_%20(6).png)
 ![Overview](./img/localhost_3000_%20(7).png)
 
