@@ -17,7 +17,7 @@ npm i
 npm run dev
 ```
 
-4. ***[optional]*** You can build a dist with the command:
+4. *[optional]* You can build a dist with the command:
 ```bash
 npm run production
 ```
@@ -26,8 +26,8 @@ npm run production
 ![Overview](./img/localhost_3000_.png)
 ![Overview](./img/localhost_3000_%20(3).png)
 ![Overview](./img/localhost_3000_%20(4).png)
-![Overview](./img/localhost_3000_(Samsung%20Galaxy%20S8%2B).png)
 ![Overview](./img/localhost_3000_%20(2).png)
+![Overview](./img/localhost_3000_(Samsung%20Galaxy%20S8%2B).png)
 ![Overview](./img/localhost_3000_%20(6).png)
 ![Overview](./img/localhost_3000_%20(7).png)
 
